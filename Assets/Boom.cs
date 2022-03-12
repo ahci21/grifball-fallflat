@@ -36,10 +36,10 @@ public class Boom : MonoBehaviour {
 
 		if(collision.gameObject.name=="piso" & right & left){
 
-			Instantiate(ball, GameObject.FindGameObjectsWithTag("Martillo")[0].transform.position, GameObject.FindGameObjectsWithTag("Martillo")[0].transform.rotation);
+			Instantiate(ball,this.transform.position, this.transform.rotation);
 			right = false;
 			left = false;
-				transform.GetChild(0).gameObject.SetActive(false);
+			transform.GetChild(0).gameObject.SetActive(false);
 		}
     }
 }
