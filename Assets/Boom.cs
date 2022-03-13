@@ -15,19 +15,31 @@ public class Boom : MonoBehaviour {
 
 		if(collision.gameObject.name=="RightHand"){
 			right = true;
+
+			if(left){ 
+				transform.GetChild(0).gameObject.SetActive(true);
+				Debug.Log("ON");
+			}
+
 		}
 
 		if(collision.gameObject.name=="LeftHand"){
 			left = true;
+
+			if(right){
+				transform.GetChild(0).gameObject.SetActive(true);
+				Debug.Log("ON");
+			}
 		}
 
+		
+
 		if(collision.gameObject.name=="piso" & right & left){
-			Debug.Log("bola gigante");
 
-			Instantiate(ball, GameObject.FindGameObjectsWithTag("Martillo")[0].transform.position, GameObject.FindGameObjectsWithTag("Martillo")[0].transform.rotation);
-
+			Instantiate(ball,this.transform.position, this.transform.rotation);
 			right = false;
 			left = false;
+			transform.GetChild(0).gameObject.SetActive(false);
 		}
     }
 }
