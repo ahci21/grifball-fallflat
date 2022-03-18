@@ -7,7 +7,7 @@ public class Boom : MonoBehaviour {
 
     public bool right=false,left=false;
 	public GameObject ball;
-
+	public AudioSource audioSource;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -35,7 +35,8 @@ public class Boom : MonoBehaviour {
 		
 
 		if(collision.gameObject.name=="piso" & right & left){
-
+			
+			audioSource.Play();
 			Instantiate(ball,this.transform.position, this.transform.rotation);
 			right = false;
 			left = false;
