@@ -11,14 +11,11 @@ public class Boom : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-		Debug.Log("Colliding with "+collision.gameObject.name);
-
 		if(collision.gameObject.name=="RightHand"){
 			right = true;
 
 			if(left){ 
 				transform.GetChild(0).gameObject.SetActive(true);
-				Debug.Log("ON");
 			}
 
 		}
@@ -28,7 +25,6 @@ public class Boom : MonoBehaviour {
 
 			if(right){
 				transform.GetChild(0).gameObject.SetActive(true);
-				Debug.Log("ON");
 			}
 		}
 
